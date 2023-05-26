@@ -16,7 +16,6 @@ function encryptText() {
 
     // Habilitar el botón de copiar
     var copyButton = document.getElementById('copyButton');
-    copyButton.disabled = false;
 }
 
 function copyText() {

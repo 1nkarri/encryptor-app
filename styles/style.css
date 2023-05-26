@@ -7,6 +7,7 @@
     --text-color: #E8EAED;
     --accent-color: #8AB4F8;
     --light-color: #9AA0A6;
+    --placeholder-color: #757575;
 
     --body-font: 'Inter', sans-serif;
 }
@@ -15,6 +16,10 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+a {
+    color: var(--text-color);
 }
 
 p {
@@ -103,6 +108,11 @@ textarea:focus-visible {
     flex-direction: column;
 }
 
+.encryptor::placeholder {
+    color: var(--placeholder-color);
+    font-weight: 500;
+}
+
 .box-footer p {
     font-size: 0.75rem;
 }
@@ -124,13 +134,17 @@ textarea:focus-visible {
 
 .box-text {
     overflow-wrap: break-word;
-    font-size: 1rem !important;
+    font-size: 1.5rem;
     padding: 1rem;
+    font-family: var(--body-font);
 }
 
-#outputText {
-    font-size: 1rem;
+.box-text:empty:before {
+    content: "Encriptación";
+    display: inline-block;
+    color: var(--light-color);
 }
+
 
 .box-text:not(:empty) + .box-copy {
     display: flex;
@@ -140,6 +154,11 @@ textarea:focus-visible {
     margin-bottom: 1rem;
 }
 
-.box-text::before {
-    content: "Encriptacion";
+.footer {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.footer p, .footer a {
+    color: var(--light-color);
 }
