@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg" sizes="32x32" href="./assets/key.svg">
+    <title>Encryptor App</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body class="body">
+    <header class="header margin">
+        <img src="./assets/key.svg" alt="key">
+        <h1 class="h1">Encryptor</h1>
+    </header>
+    <main>
+        <section class="box-header">
+            <p class="text-input">Texto</p>
+            <button>
+                <img class="exchange" src="./assets/horizontal_shift.svg" alt="arrows">
+            </button>
+            <article class="encriptar">
+                <img src="./assets/lock.svg" alt=""><p>Encriptar</p>
+            </article>
+        </section>
+        <section>
+            <article class="box-encryptor">
+                <textarea class="encryptor" autocapitalize="off" autocorrect="off" id="inputText" oninput="encryptText()" rows="1" placeholder="Ingresar texto" autocomplete="off" lang="es" style="overflow: auto hidden; box-sizing: border-box;"></textarea>
+            </article>
+            <div class="border"></div>
+            <article class="box-encryptor">
+                <span class="box-text" id="outputText"></span>
+                <button class="box-copy" onclick="copyText()" id="copyButton" disabled>
+                    <img src="./assets/copy.svg" alt="copiar">
+                </button>
+            </article>
+        </section>
+        <section class="box-footer">
+            <div class="border"></div>
+            <p>Solo letras minúsculas y sin acentos</p>
+        </section>
+    </main>
+    <footer>
+        <p>Code by <a href="https://bento.me/jhanpieremontes">jhanpieremontes</a></p>
+    </footer>
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>

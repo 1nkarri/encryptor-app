@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-color: #202124;
+    --border-color: #35393C;
+
+    --text-color: #E8EAED;
+    --accent-color: #8AB4F8;
+    --light-color: #9AA0A6;
+
+    --body-font: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: 1rem;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+textarea {
+    resize: none;
+    background: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-family: var(--body-font);
+    border: none;
+    width: 100%;
+    padding: 1rem;
+}
+
+textarea:focus-visible {
+    outline: none;
+}
+
+.margin {
+    margin: 0 1rem;
+}
+
+.body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+
+    background: var(--bg-color);
+
+}
+
+.header {
+    display: flex;
+    gap: 0.5rem;
+
+    margin-bottom: 2rem;
+    padding-top: 4rem;
+}
+
+.box-header {
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+}
+
+.text-input {
+    color: var(--light-color);
+    width: 100%;
+    text-align: center;
+
+    padding: 1rem;
+}
+
+.exchange {
+    width: 1.5rem;
+}
+
+.encriptar {
+    color: var(--accent-color);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .25rem;
+
+    padding: 1rem;
+}
+
+.encriptar img {
+    width: 1rem;
+}
+
+.box-encryptor, .box-desencryptor {
+    min-height: 8rem;
+}
+
+.box-encryptor {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-footer p {
+    font-size: 0.75rem;
+}
+
+.border {
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+}
+
+.box-footer p {
+    padding: 1rem;
+    text-align: end;
+    color: var(--light-color);
+}
+
+.box-copy {
+    display: none;
+}
+
+.box-text {
+    overflow-wrap: break-word;
+    font-size: 1rem !important;
+    padding: 1rem;
+}
+
+.box-text:not(:empty) + .box-copy {
+    display: flex;
+    margin-left: auto;
+    margin-top: auto;
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.box-text::before {
+    content: "Encriptacion";
+}
