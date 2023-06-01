@@ -26,13 +26,13 @@
     padding: 0;
 }
 
-a {
-    color: var(--accent-color);
-}
-
-p {
+p, a {
     font-size: var(--font-size-text);
     color: var(--light-color)
+}
+
+a:hover {
+    color: var(--accent-color);
 }
 
 img {
@@ -42,6 +42,7 @@ img {
 button {
     background: none;
     border: none;
+    cursor: pointer;
 }
 
 hr {
@@ -69,10 +70,6 @@ textarea:focus-visible {
     max-height: 100%;
 }
 
-.margin {
-    margin: 0 1rem;
-}
-
 .body {
     font-family: var(--body-font);
     color: var(--text-color);
@@ -81,11 +78,15 @@ textarea:focus-visible {
 
 }
 
+.button:hover {
+    background: var(--border-color);
+}
+
 .header {
     display: flex;
     gap: 0.5rem;
 
-    margin-bottom: 2rem;
+    margin: 0 1rem 2rem;
     padding-top: 4rem;
 
     & .logo {
@@ -131,7 +132,7 @@ textarea:focus-visible {
 }
 
 .main-container {
-    & .encryptor, .box-desencryptor {
+    & .encryptor {
           min-height: 8rem;
       }
     & .encryptor::placeholder {
@@ -158,16 +159,21 @@ textarea:focus-visible {
           display: flex;
           margin-left: auto;
           margin-top: auto;
-          padding-right: 1rem;
-          margin-bottom: 1rem;
+          padding: 1rem;
     }
 
     & .copy-text {
         display: none;
     }
+
     & .input {
       border-bottom: 1px solid var(--border-color);
-      }
+    }
+
+    & .output {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .footer-container {
@@ -211,6 +217,7 @@ textarea:focus-visible {
 
         & .encryptor {
             width: 100%;
+            min-height: 14rem;
           }
 
         & .input {
@@ -230,6 +237,7 @@ textarea:focus-visible {
           }
           & p {
     white-space: nowrap;
+    padding: 0 0 1rem 1rem;
             }
     }
 
