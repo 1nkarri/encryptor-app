@@ -35,6 +35,7 @@ function toggleHeaderEncryption() {
     } else {
         button.innerHTML = '<img src="../assets/lock.svg" alt=""><p>Encriptar</p>';
     }
+
 }
 
 function decryptText() {
@@ -46,5 +47,9 @@ function decryptText() {
         .replace(/ufat/gi, 'u');
 }
 
-
+function copyTextFunction() {
+    message.select();
+    navigator.clipboard.writeText(message.value)
+    alert("Texto Copiado")
+}
 
