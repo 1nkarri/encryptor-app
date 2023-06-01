@@ -31,9 +31,9 @@ function toggleHeaderEncryption() {
     button.classList.toggle("reverse");
 
     if (button.classList.contains("reverse")) {
-        button.innerHTML = '<img src="../assets/unlock.svg" alt=""><p>Desencriptar</p>';
+        button.innerHTML = '<img src="./assets/unlock.svg" alt=""><p>Desencriptar</p>';
     } else {
-        button.innerHTML = '<img src="../assets/lock.svg" alt=""><p>Encriptar</p>';
+        button.innerHTML = '<img src="./assets/lock.svg" alt=""><p>Encriptar</p>';
     }
 
 }
