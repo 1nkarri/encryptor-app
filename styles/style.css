@@ -2,6 +2,7 @@
 
 :root {
     --bg-color: #202124;
+    --bg-alt-color: #303134;
     --border-color: #35393C;
 
     --text-color: #E8EAED;
@@ -10,6 +11,13 @@
     --placeholder-color: #757575;
 
     --body-font: 'Inter', sans-serif;
+
+    --margin-2: 0.5rem;
+    --margin-4: 1rem;
+    --margin-6: 1.5rem;
+    --margin-8: 2rem;
+
+    --font-size-text: var(--margin-4);
 }
 
 * {
@@ -19,15 +27,24 @@
 }
 
 a {
-    color: var(--text-color);
+    color: var(--accent-color);
 }
 
 p {
-    font-size: 1rem;
+    font-size: var(--font-size-text);
+    color: var(--light-color)
+}
+
+img {
+    width: var(--margin-6);
 }
 
 button {
     background: none;
+    border: none;
+}
+
+hr {
     border: none;
 }
 
@@ -44,6 +61,12 @@ textarea {
 
 textarea:focus-visible {
     outline: none;
+}
+
+.encryptor {
+    overflow: hidden;
+    box-sizing: border-box;
+    max-height: 100%;
 }
 
 .margin {
@@ -64,94 +87,100 @@ textarea:focus-visible {
 
     margin-bottom: 2rem;
     padding-top: 4rem;
+
+    & .logo {
+        width: var(--margin-8);
+      }
 }
 
-.box-header {
+.header-container {
     border-bottom: 1px solid var(--border-color);
     display: flex;
     align-items: center;
+
+    flex-direction: row;
+
+    &.reverse {
+         flex-direction: row-reverse;
+     }
+
+    & .item {
+         text-align: center;
+         padding: 1rem;
+     }
+
+    & .w-full {
+         width: 100%;
+     }
+
+    & .img {
+        width: 1.5rem;
+    }
+
+    & .btn-encrypt {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: .25rem;
+
+          padding: 1rem;
+        & p {
+              color: var(--accent-color);
+          }
+      }
 }
 
-.text-input {
-    color: var(--light-color);
-    width: 100%;
-    text-align: center;
+.main-container {
+    & .encryptor, .box-desencryptor {
+          min-height: 8rem;
+      }
+    & .encryptor::placeholder {
+          color: var(--placeholder-color);
+          font-weight: 500;
+      }
 
-    padding: 1rem;
+    & .message {
+          overflow-wrap: break-word;
+          font-size: 1.5rem;
+          padding: 1rem;
+          font-family: var(--body-font);
+      }
+
+    & .message:empty:before {
+          content: "Encriptación";
+          display: inline-block;
+          color: var(--light-color);
+      }
+
+
+
+    & .message:not(:empty) + .copy-text {
+          display: flex;
+          margin-left: auto;
+          margin-top: auto;
+          padding-right: 1rem;
+          margin-bottom: 1rem;
+    }
+
+    & .copy-text {
+        display: none;
+    }
+    & .input {
+      border-bottom: 1px solid var(--border-color);
+      }
 }
 
-.exchange {
-    width: 1.5rem;
-}
-
-.encriptar {
-    color: var(--accent-color);
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .25rem;
-
-    padding: 1rem;
-}
-
-.encriptar img {
-    width: 1rem;
-}
-
-.box-encryptor, .box-desencryptor {
-    min-height: 8rem;
-}
-
-.box-encryptor {
-    display: flex;
-    flex-direction: column;
-}
-
-.encryptor::placeholder {
-    color: var(--placeholder-color);
-    font-weight: 500;
-}
-
-.box-footer p {
-    font-size: 0.75rem;
-}
-
-.border {
-    border-bottom: 1px solid var(--border-color);
-    width: 100%;
-}
-
-.box-footer p {
-    padding: 1rem;
-    text-align: end;
-    color: var(--light-color);
-}
-
-.box-copy {
-    display: none;
-}
-
-.box-text {
-    overflow-wrap: break-word;
-    font-size: 1.5rem;
-    padding: 1rem;
-    font-family: var(--body-font);
-}
-
-.box-text:empty:before {
-    content: "Encriptación";
-    display: inline-block;
-    color: var(--light-color);
-}
-
-
-.box-text:not(:empty) + .box-copy {
-    display: flex;
-    margin-left: auto;
-    margin-top: auto;
-    padding-right: 1rem;
-    margin-bottom: 1rem;
+.footer-container {
+    & hr {
+        border-top: 1px solid var(--border-color);
+        height: 1rem;
+      }
+    & p {
+         font-size: 0.75rem;
+          padding: 0 1rem 1rem;
+          text-align: end;
+          color: var(--light-color);
+     }
 }
 
 .footer {
@@ -159,6 +188,59 @@ textarea:focus-visible {
     text-align: center;
 }
 
-.footer p, .footer a {
-    color: var(--light-color);
+@media (min-width: 481px) {
+    .header {
+        justify-content: center;
+    }
+
+    .header-container {
+        border: none;
+        & .w-full {
+            border-bottom: 1px solid var(--border-color);
+          }
+    }
+
+    .main {
+        margin: 0 2rem;
+    }
+
+    .main-container {
+        display: flex;
+        gap: var(--margin-4);
+        margin: var(--margin-4) 0;
+
+        & .encryptor {
+            width: 100%;
+          }
+
+        & .input {
+            border: none;
+          }
+        & .output {
+            background: var(--bg-alt-color);
+            border-radius: var(--margin-4);
+         }
+    }
+    .footer-container {
+        border: none;
+        display: flex;
+        align-items: center;
+        & hr {
+    width: 100%;
+          }
+          & p {
+    white-space: nowrap;
+            }
+    }
+
+}
+
+@media (min-width: 928px) {
+    .header {
+        padding-top: 8rem;
+    }
+    .main {
+        max-width: 928px;
+        margin: 0 auto;
+    }
 }

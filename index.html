@@ -9,33 +9,32 @@
 </head>
 <body class="body">
     <header class="header margin">
-        <img src="./assets/key.svg" alt="key">
+        <img class="logo" src="./assets/key.svg" alt="key">
         <h1 class="h1">Encryptor</h1>
     </header>
-    <main>
-        <section class="box-header">
-            <p class="text-input">Texto</p>
-            <button>
-                <img class="exchange" src="./assets/horizontal_shift.svg" alt="arrows">
+    <main class="main">
+        <section class="header-container">
+            <p class="item w-full">Mensaje</p>
+            <button class="item button" onclick="toggleHeaderEncryption()">
+                <img class="img" src="./assets/horizontal_shift.svg" alt="arrows">
             </button>
-            <article class="encriptar">
-                <img src="./assets/lock.svg" alt=""><p>Encriptar</p>
-            </article>
+            <button class="item w-full btn-encrypt" onclick="toggleHeaderEncryption()">
+                <img class="img" src="./assets/lock.svg" alt=""><p>Encriptar</p>
+            </button>
         </section>
-        <section>
-            <article class="box-encryptor">
-                <textarea class="encryptor" autocapitalize="off" autocorrect="off" id="inputText" oninput="encryptText()" rows="1" placeholder="Ingresar texto" autocomplete="off" lang="es" style="overflow: auto hidden; box-sizing: border-box;"></textarea>
+        <section class="main-container">
+            <article class="encryptor input">
+                <textarea class="text-area" autocapitalize="off" autocorrect="off" oninput="decitionCrypt()" rows="1" placeholder="Ingresar texto" autocomplete="off" lang="es"></textarea>
             </article>
-            <div class="border"></div>
-            <article class="box-encryptor">
-                <pre class="box-text" id="outputText"></pre>
-                <button class="box-copy" onclick="copyText()" id="copyButton" disabled>
+            <article class="encryptor output">
+                <p class="message"></p>
+                <button class="button copy-text" onclick="copyText()" id="copyButton" disabled>
                     <img src="./assets/copy.svg" alt="copiar">
                 </button>
             </article>
         </section>
-        <section class="box-footer">
-            <div class="border"></div>
+        <section class="footer-container">
+            <hr>
             <p>Solo letras minúsculas y sin acentos</p>
         </section>
     </main>
